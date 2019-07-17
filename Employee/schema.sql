@@ -100,6 +100,7 @@ m.emp_no=e.emp_no;
 
 
 --List all employees whose first name is "Hercules" and last names begin with "B."
+
 SELECT e.first_name,e.last_name FROM employees AS e
 WHERE first_name = 'Hercules' AND last_name LIKE 'B%';
 
@@ -107,7 +108,7 @@ WHERE first_name = 'Hercules' AND last_name LIKE 'B%';
 /*List all employees in the Sales department, including their 
 employee number, last name, first name, and department name.*/
 
-SELECT *  FROM departments;
+--SELECT *  FROM departments;
 
 SELECT e.emp_no,e.first_name,e.last_name,m.dept_name FROM employees As e
  INNER JOIN dept_emp AS d ON
@@ -119,6 +120,14 @@ SELECT e.emp_no,e.first_name,e.last_name,m.dept_name FROM employees As e
 /* List all employees in the Sales and Development departments, 
 including their employee number, last name, first name, and department name.*/
  
+  SELECT e.emp_no,e.first_name,e.last_name , d.dept_name FROM employees AS e
+ INNER JOIN dept_emp AS de ON
+ e.emp_no=de.emp_no
+ INNER JOIN departments AS d ON
+ de.dept_no=d.dept_no
+ WHERE d.dept_name='Development' OR  d.dept_name='Sales';
+ 
+ --Tried with Subqueries--
  SELECT emp_no,first_name,last_name FROM employees
  WHERE emp_no IN
  ( 
@@ -130,12 +139,7 @@ including their employee number, last name, first name, and department name.*/
 	)
  );
 	 
- /*SELECT e.emp_no,e.first_name,e.last_name,departments.dept_name FROM employees As e
- INNER JOIN dept_emp AS d ON
- e.emp_no=d.emp_no
- INNER JOIN departments  ON
- d.dept_no=departments.dept_no
- WHERE departments.dept_name='Sales' AND departments.dept_name='Development';*/
+ 
  
 
 /*Descending order, list the frequency count of employee last names,
