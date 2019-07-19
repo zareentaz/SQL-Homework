@@ -152,4 +152,20 @@ GROUP BY last_name
 HAVING COUNT(*) > 1
 ORDER BY last_name DESC;
 
+
+
+--average salary by title.
+SELECT  AVG(salary) AS avg_sal,t.title FROM salaries AS s , titles AS t
+WHERE s.emp_no=t.emp_no
+GROUP BY title;
+
+
+
+
+
+ 
+ 
+
+
+
  
