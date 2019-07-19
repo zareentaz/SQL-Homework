@@ -72,16 +72,16 @@ department name, the manager's employee number, last name, first name, and start
 /*SELECT e.first_name,e.last_name,e.emp_no FROM 
 (SELECT d.dept_name,d.dept_no,m.emp_no,m.from_date,m.to_date FROM departments AS d
 INNER JOIN dept_manager AS m ON
-d.dept_no= m.dept_no;) AS "table",employees AS e
+d.dept_no= m.dept_no;) AS tab,employees AS e
 WHERE e.emp_no= m.emp_no;
 
 
 SELECT e.first_name,e.last_name,e.emp_no FROM employees AS e 
 INNER JOIN  table ON
-e.emp_no=table.emp_no 
+e.emp_no=tab.emp_no 
 (SELECT d.dept_name,d.dept_no,m.emp_no,m.from_date,m.to_date FROM departments AS d
 INNER JOIN dept_manager AS m ON
-d.dept_no= m.dept_no) AS table;*/
+d.dept_no= m.dept_no) AS tab;*/
  
 SELECT m.dept_no,d.dept_name,m.emp_no,e.first_name,e.last_name,m.from_date,m.to_date FROM departments AS d
 INNER JOIN dept_manager AS m ON
