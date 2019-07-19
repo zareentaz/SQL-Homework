@@ -159,8 +159,9 @@ SELECT  AVG(salary) AS avg_sal,t.title FROM salaries AS s , titles AS t
 WHERE s.emp_no=t.emp_no
 GROUP BY title;
 
-
-
+--Epilogue
+SELECT * FROM employees
+WHERE emp_no=499942;
 
 
  
