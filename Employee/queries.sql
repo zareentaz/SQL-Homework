@@ -17,14 +17,14 @@ d.dept_no= m.dept_no
 INNER JOIN employees AS e ON
 m.emp_no=e.emp_no;
 
-/*4. department of each employee with the following information: SELECT e.emp_no,e.first_name,e.last_name,m.dept_name FROM employees As e
+/*4. department of each employee with the following information:
+ employee number, last name, first name, and department name.*/
+ 
+ SELECT e.emp_no,e.first_name,e.last_name,m.dept_name FROM employees As e
  INNER JOIN dept_emp AS d ON
  e.emp_no=d.emp_no
  INNER JOIN departments AS m ON
  d.dept_no=m.dept_no;
- employee number, last name, first name, and department name.*/
- 
- 
 
 
 --5.List all employees whose first name is "Hercules" and last names begin with "B."
